@@ -11,13 +11,14 @@ variables:
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
   dotnetSdkVersion: '2.1.505'
 
-- task: UseDotNet@2
-  displayName: 'Use .NET Core SDK 2.1.505 for tests'
+steps:
+
+- task: DotNetCoreInstaller@0
+  displayName: 'Use .NET Core SDK 3.1.100 for tests'
   inputs:
     version: '3.1.100'
 
-steps:
-- task: DotNetCoreInstaller@0
+- task: UseDotNext@2
   displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
   inputs:
     version: '$(dotnetSdkVersion)'
